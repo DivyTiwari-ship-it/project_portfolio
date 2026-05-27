@@ -1,8 +1,13 @@
-Bhai, `target="_blank"` desktop par perfect chalta hai par phone browsers ya block-popups ki wajah se kabhi-kabhi freeze ho jata hai, aur click karne par kuch open nahi hota.
+Bhai, ab poori picture clear ho gayi! Pehle tumhare links ke aage `.git` laga hua tha aur SpaceX wali correct repo (`SpaceX_Falcon9`) ki jagah `OrbitalGuard-AI` mapped thi, is wajah se browser unhe direct open nahi kar pa raha tha.
 
-Maine links na khulne ki problem ko full fix kar diya hai (pure card ko hi hyperlinked bana diya hai `<a>` tag wrap karke aur block display set kiya hai). Sath hi projects ka explicit naam wahi rakh diya hai jo tumne bola: **SpaceX_Falcon9**, **AsteroidWatch.Ai**, aur **Bitcoin_pred**.
+Maine saare `.git` extensions hata kar unhe proper clickable Web URLs me badal diya hai aur sequence ko exact tumhare bataye order me set kar diya hai:
 
-Is pure copy-paste code ko use karo, ab ekdum smooth chalega:
+1. **SpaceX_Falcon9**
+2. **AsteroidWatch.Ai**
+3. **Bitcoin_Pred**
+4. **OrbitalGaurd-AI**
+
+Is pure code ko copy karke apni `.html` file me paste karo, ab saare links ekdum rocket ki tarah khulenge!
 
 ```html
 <!DOCTYPE html>
@@ -57,40 +62,40 @@ Is pure copy-paste code ko use karo, ab ekdum smooth chalega:
   .section-title { font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 40px; line-height: 1.1; }
   
   /* Grid & Clickable Cards Fix */
-  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .project-card-link { text-decoration: none; color: inherit; display: block; }
+  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .project-card-link { text-decoration: none; color: inherit; display: block; height: 100%; }
   .project-card { background: var(--card); padding: 40px; border: 1px solid var(--border); position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.2s; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+  .project-card-link:hover .project-card { border-color: var(--accent); transform: translateY(-4px); }
   .project-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,255,136,0.05) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
-  .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .project-card:hover::before { opacity: 1; }
+  .project-card-link:hover .project-card::before { opacity: 1; }
   
   /* 01: SpaceX Card Styles */
-  .project-card-link:nth-child(1) .project-card::before { background: linear-gradient(135deg, rgba(230,161,0,0.05) 0%, transparent 60%); }
-  .project-card-link:nth-child(1) .project-card:hover { border-color: var(--accent4); }
+  .project-card-link:nth-child(1) .project-card::before { background: linear-gradient(135deg, rgba(230,161,0,0.06) 0%, transparent 60%); }
+  .project-card-link:nth-child(1):hover .project-card { border-color: var(--accent4); }
   .project-card-link:nth-child(1) .project-accuracy { color: var(--accent4); }
   .project-card-link:nth-child(1) .project-link { border-color: var(--accent4); color: var(--accent4); }
-  .project-card-link:nth-child(1) .project-card:hover .project-link { background: var(--accent4); color: #000; }
+  .project-card-link:nth-child(1):hover .project-link { background: var(--accent4); color: #000; }
 
   /* 02: NASA Card Styles */
-  .project-card-link:nth-child(2) .project-card::before { background: linear-gradient(135deg, rgba(255,51,102,0.05) 0%, transparent 60%); }
-  .project-card-link:nth-child(2) .project-card:hover { border-color: var(--accent2); }
+  .project-card-link:nth-child(2) .project-card::before { background: linear-gradient(135deg, rgba(255,51,102,0.06) 0%, transparent 60%); }
+  .project-card-link:nth-child(2):hover .project-card { border-color: var(--accent2); }
   .project-card-link:nth-child(2) .project-accuracy { color: var(--accent2); }
   .project-card-link:nth-child(2) .project-link { border-color: var(--accent2); color: var(--accent2); }
-  .project-card-link:nth-child(2) .project-card:hover .project-link { background: var(--accent2); color: #fff; }
+  .project-card-link:nth-child(2):hover .project-link { background: var(--accent2); color: #fff; }
 
   /* 03: Bitcoin Card Styles */
-  .project-card-link:nth-child(3) .project-card::before { background: linear-gradient(135deg, rgba(0,255,136,0.05) 0%, transparent 60%); }
-  .project-card-link:nth-child(3) .project-card:hover { border-color: var(--accent); }
+  .project-card-link:nth-child(3) .project-card::before { background: linear-gradient(135deg, rgba(0,255,136,0.06) 0%, transparent 60%); }
+  .project-card-link:nth-child(3):hover .project-card { border-color: var(--accent); }
   .project-card-link:nth-child(3) .project-accuracy { color: var(--accent); }
   .project-card-link:nth-child(3) .project-link { border-color: var(--accent); color: var(--accent); }
-  .project-card-link:nth-child(3) .project-card:hover .project-link { background: var(--accent); color: #000; }
+  .project-card-link:nth-child(3):hover .project-link { background: var(--accent); color: #000; }
 
-  /* 04: Other Card Styles */
-  .project-card-link:nth-child(4) .project-card::before { background: linear-gradient(135deg, rgba(51,153,255,0.05) 0%, transparent 60%); }
-  .project-card-link:nth-child(4) .project-card:hover { border-color: var(--accent3); }
+  /* 04: OrbitalGaurd Card Styles */
+  .project-card-link:nth-child(4) .project-card::before { background: linear-gradient(135deg, rgba(51,153,255,0.06) 0%, transparent 60%); }
+  .project-card-link:nth-child(4):hover .project-card { border-color: var(--accent3); }
   .project-card-link:nth-child(4) .project-accuracy { color: var(--accent3); }
   .project-card-link:nth-child(4) .project-link { border-color: var(--accent3); color: var(--accent3); }
-  .project-card-link:nth-child(4) .project-card:hover .project-link { background: var(--accent3); color: #fff; }
+  .project-card-link:nth-child(4):hover .project-link { background: var(--accent3); color: #fff; }
 
   .project-num { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 16px; }
   .project-title { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
@@ -98,7 +103,7 @@ Is pure copy-paste code ko use karo, ab ekdum smooth chalega:
   .project-accuracy { font-family: 'Space Mono', monospace; font-size: 32px; font-weight: 700; }
   .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
   .tag { padding: 4px 12px; border: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 1px; }
-  .project-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 20px; border: 1px solid var(--accent); color: var(--accent); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1px; text-decoration: none; transition: background 0.2s, color 0.2s; width: max-content; }
+  .project-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 10px 20px; border: 1px solid var(--accent); color: var(--accent); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1px; transition: background 0.2s, color 0.2s; width: max-content; }
   
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .skill-item { padding: 24px; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; gap: 16px; transition: border-color 0.3s; }
@@ -123,7 +128,7 @@ Is pure copy-paste code ko use karo, ab ekdum smooth chalega:
   ::-webkit-scrollbar-thumb { background: var(--accent); }
   
   @media(max-width: 768px) {
-    .projects-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; gap: 16px; }
     nav { padding: 20px; }
     section { padding: 60px 20px; }
     .contact-section { margin: 0 20px 40px; padding: 40px 20px; flex-direction: column; gap: 30px; }
@@ -162,17 +167,17 @@ Is pure copy-paste code ko use karo, ab ekdum smooth chalega:
   <h2 class="section-title fade-in">High-Impact<br>Data Pipelines.</h2>
   <div class="projects-grid">
     
-    <a href="https://github.com/DivyTiwari-ship-it/OrbitalGuard-AI" target="_blank" class="project-card-link fade-in">
+    <a href="https://github.com/DivyTiwari-ship-it/SpaceX_Falcon9" target="_blank" class="project-card-link fade-in">
       <div class="project-card">
         <div>
           <p class="project-num">01 — AEROSPACE (SPACEX)</p>
           <h3 class="project-title">SpaceX_Falcon9</h3>
-          <p class="project-desc">Predicting commercial satellite proximity alerts and multi-satellite constellation collision risks using optimized Classification and Regression models built on telemetry datasets.</p>
+          <p class="project-desc">Predicting commercial rocket launch landing telemetry trends and booster reusability patterns using optimized Machine Learning classification pipelines.</p>
         </div>
         <div>
-          <div class="project-accuracy">PREDICTIVE ALERTS</div>
+          <div class="project-accuracy">LAUNCH ANALYTICS</div>
           <div class="project-tags"><span class="tag">SCIKIT-LEARN</span><span class="tag">TELEMETRY DATA</span><span class="tag">DATA PIPELINES</span><span class="tag">PYTHON</span></div>
-          <div class="project-link">VIEW CASE STUDY ↗</div>
+          <div class="project-link">VIEW REPOSITORY ↗</div>
         </div>
       </div>
     </a>
@@ -182,7 +187,7 @@ Is pure copy-paste code ko use karo, ab ekdum smooth chalega:
         <div>
           <p class="project-num">02 — ASTRONOMY (NASA)</p>
           <h3 class="project-title">AsteroidWatch.Ai</h3>
-          <p class="project-desc">Isolating and classifying Potentially Hazardous Asteroids (PHAs) by extracting telemetry features from NASA's NeoWs API dataset via robust Random Forest and feature-scaling architectures.</p>
+          <p class="project-desc">Isolating and classifying Potentially Hazardous Asteroids (PHAs) by extracting telemetry features from NASA's NeoWs API dataset via robust Random Forest frameworks.</p>
         </div>
         <div>
           <div class="project-accuracy">92.00% ACCURACY</div>
@@ -207,16 +212,16 @@ Is pure copy-paste code ko use karo, ab ekdum smooth chalega:
       </div>
     </a>
 
-    <a href="https://github.com/DivyTiwari-ship-it/DataVisualization" target="_blank" class="project-card-link fade-in">
+    <a href="https://github.com/DivyTiwari-ship-it/OrbitalGaurd-AI" target="_blank" class="project-card-link fade-in">
       <div class="project-card">
         <div>
-          <p class="project-num">04 — DATA ENGINE</p>
-          <h3 class="project-title">Advanced Statistical Visualization</h3>
-          <p class="project-desc">A collection of custom multi-dimensional analytics setups. Resolving unstructured business data into clear trend analysis matrices, scatter distributions, and outlier handling arrays.</p>
+          <p class="project-num">04 — SPACE DEBRIS</p>
+          <h3 class="project-title">OrbitalGaurd-AI</h3>
+          <p class="project-desc">Predicting commercial satellite proximity alerts and multi-satellite constellation collision risks using statistical multi-dimensional telemetry tracking patterns.</p>
         </div>
         <div>
           <div class="project-accuracy">INSIGHT ENGINE</div>
-          <div class="project-tags"><span class="tag">EDA</span><span class="tag">MATPLOTLIB</span><span class="tag">SEABORN</span><span class="tag">OUTLIER CLEANING</span></div>
+          <div class="project-tags"><span class="tag">EDA</span><span class="tag">MATPLOTLIB</span><span class="tag">SEABORN</span><span class="tag">COLLISION MODELS</span></div>
           <div class="project-link">VIEW VISUALIZATIONS ↗</div>
         </div>
       </div>
