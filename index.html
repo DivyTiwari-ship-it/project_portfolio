@@ -1,10 +1,3 @@
-Bhai, screenshot dekh kar samajh aa gaya—tumhari repo bilkul **Public** hai (jo top par tag bhi dikh raha hai).
-
-Agar abhi bhi link click karne par 404 error aa raha hai, toh iska sirf ek hi technical reason bacha hai: **GitHub URLs Case-Sensitive hote hain.** Tumhare pic me username ka **`T` capital** hai (`DivyTiwari-ship-it`) aur repo me **`X` capital** hai (`SpaceX_Falcon9`). Agar URL me ek bhi letter capital/small alag ho jaye, toh GitHub direct 404 throw karta hai.
-
-Maine neeche pure code me links ko exact tumhare username aur profile casing ke hisab se perfectly lock kar diya hai. Is code ko copy-paste karo, ab 404 ka kissa khatam!
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +49,7 @@ Maine neeche pure code me links ko exact tumhare username aur profile casing ke 
   .section-tag { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 3px; margin-bottom: 12px; }
   .section-title { font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 40px; line-height: 1.1; }
   
-  /* Grid & Clickable Cards Fix */
+  /* Grid Layout Fix */
   .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .project-card-link { text-decoration: none; color: inherit; display: block; height: 100%; }
   .project-card { background: var(--card); padding: 40px; border: 1px solid var(--border); position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.2s; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
@@ -64,28 +57,28 @@ Maine neeche pure code me links ko exact tumhare username aur profile casing ke 
   .project-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,255,136,0.05) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
   .project-card-link:hover .project-card::before { opacity: 1; }
   
-  /* 01: SpaceX Card Styles */
+  /* 01: SpaceX Card Colors */
   .project-card-link:nth-child(1) .project-card::before { background: linear-gradient(135deg, rgba(230,161,0,0.06) 0%, transparent 60%); }
   .project-card-link:nth-child(1):hover .project-card { border-color: var(--accent4); }
   .project-card-link:nth-child(1) .project-accuracy { color: var(--accent4); }
   .project-card-link:nth-child(1) .project-link { border-color: var(--accent4); color: var(--accent4); }
   .project-card-link:nth-child(1):hover .project-link { background: var(--accent4); color: #000; }
 
-  /* 02: NASA Card Styles */
+  /* 02: NASA Card Colors */
   .project-card-link:nth-child(2) .project-card::before { background: linear-gradient(135deg, rgba(255,51,102,0.06) 0%, transparent 60%); }
   .project-card-link:nth-child(2):hover .project-card { border-color: var(--accent2); }
   .project-card-link:nth-child(2) .project-accuracy { color: var(--accent2); }
   .project-card-link:nth-child(2) .project-link { border-color: var(--accent2); color: var(--accent2); }
   .project-card-link:nth-child(2):hover .project-link { background: var(--accent2); color: #fff; }
 
-  /* 03: Bitcoin Card Styles */
+  /* 03: Bitcoin Card Colors */
   .project-card-link:nth-child(3) .project-card::before { background: linear-gradient(135deg, rgba(0,255,136,0.06) 0%, transparent 60%); }
   .project-card-link:nth-child(3):hover .project-card { border-color: var(--accent); }
   .project-card-link:nth-child(3) .project-accuracy { color: var(--accent); }
   .project-card-link:nth-child(3) .project-link { border-color: var(--accent); color: var(--accent); }
   .project-card-link:nth-child(3):hover .project-link { background: var(--accent); color: #000; }
 
-  /* 04: OrbitalGaurd Card Styles */
+  /* 04: OrbitalGaurd Card Colors */
   .project-card-link:nth-child(4) .project-card::before { background: linear-gradient(135deg, rgba(51,153,255,0.06) 0%, transparent 60%); }
   .project-card-link:nth-child(4):hover .project-card { border-color: var(--accent3); }
   .project-card-link:nth-child(4) .project-accuracy { color: var(--accent3); }
@@ -162,7 +155,7 @@ Maine neeche pure code me links ko exact tumhare username aur profile casing ke 
   <h2 class="section-title fade-in">High-Impact<br>Data Pipelines.</h2>
   <div class="projects-grid">
     
-    <a href="https://github.com/DivyTiwari-ship-it/SpaceX_Falcon9" target="_blank" class="project-card-link fade-in">
+    <a href="https://github.com/DivyTiwari-ship-it/spacex_falcon9" target="_blank" class="project-card-link fade-in">
       <div class="project-card">
         <div>
           <p class="project-num">01 — AEROSPACE (SPACEX)</p>
@@ -271,5 +264,3 @@ Maine neeche pure code me links ko exact tumhare username aur profile casing ke 
 </script>
 </body>
 </html>
-
-```
